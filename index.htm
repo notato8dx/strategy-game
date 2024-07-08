@@ -1,0 +1,143 @@
+<!doctype html>
+
+<meta charset="utf-8">
+
+<html style="
+	background-color: black;
+	align-items: center;
+	height: 100%
+">
+	<style>
+		*
+		{
+			padding: 0;
+			margin: 0
+		}
+
+		body,
+		button,
+		div,
+		html,
+		li
+		{
+			display: flex;
+			justify-content: center
+		}
+
+		img
+		{
+			width: 80px;
+			height: 80px;
+			font-size: 60px
+		}
+
+		ul
+		{
+			overflow-y: scroll;
+			display: flex;
+			flex-direction: column;
+			background-color: white
+		}
+
+		li
+		{
+			flex-direction: column
+		}
+
+		button
+		{
+			flex: auto;
+			font-size: 200%;
+			align-items: center
+		}
+
+		ul,
+		.panel
+		{
+			padding: 20px;
+		}
+
+		.panel,
+		.panel > *
+		{
+			gap: 20px
+		}
+
+		#main > div
+		{
+			inset: 0;
+			position: absolute;
+		}
+
+		#grid,
+		#grid *
+		{
+			flex: auto;
+			transform-style: preserve-3d
+		}
+
+		#grid * div
+		{
+			background-color: white
+		}
+
+		#grid .water-tile div
+		{
+			background-color: blue
+		}
+
+		#grid *:nth-child(even) :is(
+			*:nth-child(even),
+			*:nth-child(odd):not(.raised-tile)
+		) div,
+		#grid *:nth-child(odd) :is(
+			*:nth-child(odd),
+			*:nth-child(even):not(.raised-tile)
+		) div
+		{
+			filter: brightness(80%)
+		}
+
+		#grid *:nth-child(even) *:nth-child(even):not(.raised-tile) div,
+		#grid *:nth-child(odd) *:nth-child(odd):not(.raised-tile) div
+		{
+			filter: brightness(64%)
+		}
+
+		#grid * *:hover div
+		{
+			background-color: yellow;
+			filter: none !important
+		}
+
+		#grid img
+		{
+			position: absolute;
+			transform: rotateX(-75deg) translateY(-40px);
+			pointer-events: none
+		}
+
+		#grid img:not([alt])
+		{
+			display: none
+		}
+
+		.raised-tile
+		{
+			transform: translateZ(20px)
+		}
+
+		.water-tile
+		{
+			transform: translateZ(-20px)
+		}
+	</style>
+
+	<body style="
+		width: 800px;
+		height: 540px;
+		flex-direction: column
+	">
+		<script src="script.js"></script>
+	</body>
+</html>

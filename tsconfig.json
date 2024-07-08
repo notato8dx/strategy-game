@@ -1,0 +1,16 @@
+{
+	"compilerOptions": {
+		"allowUnreachableCode": false,
+		"allowUnusedLabels": false,
+		"exactOptionalPropertyTypes": true,
+		"noImplicitOverride": true,
+		"noUncheckedIndexedAccess": true,
+		"lib": [
+			"dom",
+			"esnext"
+		],
+		"strict": true,
+		"target": "esnext"
+	},
+	"files": [ "script.ts" ]
+}
